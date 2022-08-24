@@ -1,3 +1,11 @@
+def reply():
+  print()
+  print("I'll give you a moment.")
+
+
+
+
+
 def yes_no(question):
   valid = False
   while not valid:
@@ -15,12 +23,10 @@ def yes_no(question):
       print ("Please type yes/no")
 
 
-display_menu = yes_no("Would you like to see the menu? ")
 
-if display_menu == "yes" or display_menu == "y":
-  print("Okay Sweet")
+want_order = yes_no("Would you like to order now?")
+if want_order == "no" or want_order == "n":
+  reply()
 
-if display_menu == "no" or display_menu == "n":
-  print("Have a nice day")
-
-  
+if want_order == "yes" or want_order == "y":
+  print("What can I get you today?")

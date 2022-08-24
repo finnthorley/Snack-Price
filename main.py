@@ -1,14 +1,14 @@
 print("Welcome to the Price Comparison Tool")
 print()
 
-def price_check (question, low, high):
-  error = "Please enter a whole number between 1 and 1000; we do not allow numbers above 1000 as we don't have change\n"
+def budget_checker (question, low, high):
+  error = "Please enter a whole number between 1 and 1000; we do not allow numbers above 1000 as we don't have change.\n"
   valid =  False 
   while not valid:
     try:
       response = float(input(question))
 
-      if 0 < response < 1000:
+      if 0 < response <= 1000:
         return response
       else:
 
@@ -17,6 +17,98 @@ def price_check (question, low, high):
     except ValueError:
       print(error)
 
-price = price_check ("How much money are you wanting to spend? ", 0,1000)
-print("You will be spending ${}".format(price))
+budget = budget_checker ("How much money are you wanting to spend? ", 0,1000)
 print()
+print("You will be spending ${}".format(budget))
+print()
+def reply():
+  print()
+  print("Thanks for stopping by!")
+
+def menu():
+  print()
+  print("Menu                                |  Price    |")
+  print()
+  print("Sea Salt Crackers                   |  $2.00    |")
+  print()
+  print("Griffins Snax                       |  $2.50    |")
+  print()
+  print("Pizza Shapes                        |  $3.30    | ")
+  print()
+  print("Arnotts Cheds                       |  $3.99    |")
+  print()
+  print("Rosemary Wheat                      |  $2.00    |")
+  print()
+  print("Original Rice Crackers              |  $1.65    |")
+  print()
+def yes_no(question):
+  valid = False
+  while not valid:
+    response = input(question).lower()
+
+    if response == "yes" or response == "y":
+      response = "yes"
+      return response
+
+    elif response == "no" or response == "n":
+      response = "no"
+      return response
+
+    else:
+      print ("Please type yes/no")
+
+
+display_menu = yes_no("Would you like to see the menu? ")
+  
+if display_menu == "yes" or display_menu == "y":
+    menu()
+if display_menu == "no" or display_menu == "n":
+  reply()
+
+import time 
+
+
+def reply():
+  print()
+  print("I'll give you a moment.")
+  print()
+
+
+
+
+
+def yes_no(question):
+  valid = False
+  while not valid:
+    response = input(question).lower()
+
+    if response == "yes" or response == "y":
+      response = "yes"
+      return response
+
+    elif response == "no" or response == "n":
+      response = "no"
+      return response
+
+    else:
+      print ("Please type yes/no")
+
+
+
+want_order = yes_no("Would you like to order now? ")
+if want_order == "no" or want_order == "n":
+  reply()
+  time.sleep(10)
+  want_order = yes_no("Would you like to order now? ")
+if want_order == "no" or want_order == "n":
+    reply()
+    time.sleep(10)
+    want_order = yes_no("Would you like to order now? ")
+    
+  
+
+if want_order == "yes" or want_order == "y":
+  print()
+  print("What can I get you today?")
+
+ 
