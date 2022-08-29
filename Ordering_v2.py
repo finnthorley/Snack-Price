@@ -42,6 +42,29 @@ if want_order == "no" or want_order == "n":
 
 if want_order == "yes" or want_order == "y":
   print()
-  print("What can I get you today?")
+
+would_like = food ("What can I get you today?")
+
+if would_like == "Sea Salt Crackers" or would_like == "A":
+  print("That will come to a total of $2.00.")
+
+if would_like == "Griffins Snax" or would_like == "B":
+  print("That will come to a total of $2.50.")
+
+if would_like == "Pizza Shapes" or would_like == "C":
+  print("That will come to a total of $3.30.")
+
+if would_like == "Arnotts Cheds" or would_like == "D":
+  print("That will come to a total of $3.99.")
+
+if would_like == "Rosemary Wheat" or would_like == "E":
+  print("That will come to a total of $2.00.")
+
+if would_like == "Original Rice Crackers" or would_like == "F":
+  print("That will come to a total of $1.65.")
+
+
+
+  
 
  

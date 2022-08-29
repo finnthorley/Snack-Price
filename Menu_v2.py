@@ -6,17 +6,17 @@ def menu():
   print()
   print("Menu                                |  Price    |")
   print()
-  print("Sea Salt Crackers                   |  $2.00    |")
+  print("Sea Salt Crackers (A)                   |  $2.00    |")
   print()
-  print("Griffins Snax                       |  $2.50    |")
+  print("Griffins Snax (B)                      |  $2.50    |")
   print()
-  print("Pizza Shapes                        |  $3.30    | ")
+  print("Pizza Shapes (C)                       |  $3.30    | ")
   print()
-  print("Arnotts Cheds                       |  $3.99    |")
+  print("Arnotts Cheds (D)                      |  $3.99    |")
   print()
-  print("Rosemary Wheat                      |  $2.00    |")
+  print("Rosemary Wheat (E)                     |  $2.00    |")
   print()
-  print("Original Rice Crackers              |  $1.65    |")
+  print("Original Rice Crackers (F)             |  $1.65    |")
 
 def yes_no(question):
   valid = False
