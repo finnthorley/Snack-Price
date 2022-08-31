@@ -7,6 +7,35 @@ def reply():
   print()
 
 
+def food(question):
+  valid = False
+  while not valid:
+    response = input(question).lower()
+
+    if response == "Sea Salt Crackers" or response == "A":
+      response = "Sea Salt Crackers"
+      return response
+
+    elif response == "Griffins Snax" or response == "B":
+      response = "Griffins Snax"
+      return response
+
+    elif response == "Pizza Shapes" or response == "C":
+      response = "Pizza Shapes"
+
+    elif response == "Arnotts Cheds" or response == "D":
+      response = "Arnotts Cheds"
+
+    elif response == "Rosemary Wheat" or response == "E":
+      response = "Rosemary Wheat"
+
+    elif response == "Original Rice Crackers" or response == "F":
+      response = "Original Rice Crackers"
+
+    else:
+      print ("Choose an item from the Menu please.")
+
+
 
 
 
