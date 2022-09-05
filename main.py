@@ -88,24 +88,24 @@ def food(question):
   while not valid:
     response = input(question).lower()
 
-    if response == "Sea Salt Crackers" or response == "A":
+    if response == "Sea Salt Crackers" or response == "a":
       response = "Sea Salt Crackers"
       return response
 
-    elif response == "Griffins Snax" or response == "B":
+    elif response == "Griffins Snax" or response == "b":
       response = "Griffins Snax"
       return response
 
-    elif response == "Pizza Shapes" or response == "C":
+    elif response == "Pizza Shapes" or response == "c":
       response = "Pizza Shapes"
 
-    elif response == "Arnotts Cheds" or response == "D":
+    elif response == "Arnotts Cheds" or response == "d":
       response = "Arnotts Cheds"
 
-    elif response == "Rosemary Wheat" or response == "E":
+    elif response == "Rosemary Wheat" or response == "e":
       response = "Rosemary Wheat"
 
-    elif response == "Original Rice Crackers" or response == "F":
+    elif response == "Original Rice Crackers" or response == "e":
       response = "Original Rice Crackers"
 
     else:
@@ -125,10 +125,11 @@ if want_order == "no" or want_order == "n":
 
 if want_order == "yes" or want_order == "y":
   print()
-  print("What can I get you today?")
+ 
 
 
-would_like = food ("What can I get you today?")
+would_like = food ("What can I get you today? ")
+print(would_like)
 
 if would_like == "Sea Salt Crackers" or would_like == "A":
   print("That will come to a total of $2.00.")
@@ -137,16 +138,34 @@ if would_like == "Griffins Snax" or would_like == "B":
   print("That will come to a total of $2.50.")
 
 if would_like == "Pizza Shapes" or would_like == "C":
+  price = 3.30
   print("That will come to a total of $3.30.")
 
+if budget < price: 
+  print("You've picked an item that's more than your budget")
+
 if would_like == "Arnotts Cheds" or would_like == "D":
+  price = 3.99
   print("That will come to a total of $3.99.")
 
+if budget < price: 
+  print("You've picked an item that's more than your budget")
+
 if would_like == "Rosemary Wheat" or would_like == "E":
+  price = 2.00
   print("That will come to a total of $2.00.")
 
+if budget < price: 
+  print("You've picked an item that's more than your budget")
+ 
+
 if would_like == "Original Rice Crackers" or would_like == "F":
+  price = 1.65
   print("That will come to a total of $1.65.")
+
+if budget < price: 
+  print("You've picked an item that's more than your budget")
+  
 
 
 
