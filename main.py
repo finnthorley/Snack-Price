@@ -3,6 +3,8 @@ import time
 print("Welcome to the Price Comparison Tool")
 print()
 
+price = 0
+
 def budget_checker (question, low, high):
   error = "Please enter a whole number between 1 and 1000; we do not allow numbers above 1000 as we don't have change.\n"
   valid =  False 
@@ -54,9 +56,9 @@ def yes_no(question):
 
 def menu():
   print()
-  print("Menu                                |  Price    |")
+  print("Menu                                   |  Price    |")
   print()
-  print("Sea Salt Crackers (A)                   |  $2.00    |")
+  print("Sea Salt Crackers (A)                  |  $2.00    |")
   print()
   print("Griffins Snax (B)                      |  $2.50    |")
   print()
@@ -90,28 +92,41 @@ def food(question):
 
     if response == "Sea Salt Crackers" or response == "a":
       response = "Sea Salt Crackers"
+      price = 2
+      print("Sea Salt Crackers will come to a total of ${}.".format(price))
       return response
 
     elif response == "Griffins Snax" or response == "b":
       response = "Griffins Snax"
+      price = 2.5
+      print("Griffins Snax will come to a total of ${}.".format(price))
       return response
 
     elif response == "Pizza Shapes" or response == "c":
       response = "Pizza Shapes"
+      price = 3.3
+      print("Pizza Shapes will come to a total of ${}.".format(price))
+      return response
 
     elif response == "Arnotts Cheds" or response == "d":
       response = "Arnotts Cheds"
+      price = 3.99
+      print("Arnotts Cheds will come to a total of ${}.".format(price))
+      return response
 
     elif response == "Rosemary Wheat" or response == "e":
       response = "Rosemary Wheat"
+      price = 2
+      print("Rosemary Wheat will come to a total of ${}.".format(price))
+      return response
 
-    elif response == "Original Rice Crackers" or response == "e":
+    elif response == "Original Rice Crackers" or response == "f":
       response = "Original Rice Crackers"
+      price = 1.65
+      print("Original Rice Crackers will come to a total of ${}.".format(price))
+      return response
 
-    else:
-      print ("Choose an item from the Menu please.")
-
-want_order = yes_no("Would you like to order now? ")
+want_order = yes_no("Would you like to order now? ").lower()
 if want_order == "no" or want_order == "n":
   repli()
   time.sleep(10)
@@ -128,38 +143,26 @@ if want_order == "yes" or want_order == "y":
  
 
 
-would_like = food ("What can I get you today? ")
-print(would_like)
+would_like = food ("What can I get you today? ").lower()
 
-if would_like == "Sea Salt Crackers" or would_like == "A":
+if would_like == "Sea Salt Crackers" or would_like == "a":
   print("That will come to a total of $2.00.")
 
-if would_like == "Griffins Snax" or would_like == "B":
+if would_like == "Griffins Snax" or would_like == "b":
   print("That will come to a total of $2.50.")
 
-if would_like == "Pizza Shapes" or would_like == "C":
+if would_like == "Pizza Shapes" or would_like == "c":
   price = 3.30
   print("That will come to a total of $3.30.")
 
-if budget < price: 
-  print("You've picked an item that's more than your budget")
-
-if would_like == "Arnotts Cheds" or would_like == "D":
+if would_like == "Arnotts Cheds" or would_like == "d":
   price = 3.99
   print("That will come to a total of $3.99.")
 
-if budget < price: 
-  print("You've picked an item that's more than your budget")
-
-if would_like == "Rosemary Wheat" or would_like == "E":
-  price = 2.00
+if would_like == "Rosemary Wheat" or would_like == "e":
   print("That will come to a total of $2.00.")
 
-if budget < price: 
-  print("You've picked an item that's more than your budget")
- 
-
-if would_like == "Original Rice Crackers" or would_like == "F":
+if would_like == "Original Rice Crackers" or would_like == "f":
   price = 1.65
   print("That will come to a total of $1.65.")
 
