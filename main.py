@@ -5,6 +5,8 @@ print()
 
 price = 0
 
+item = ""
+
 def budget_checker (question, low, high):
   error = "Please enter a whole number between 1 and 1000; we do not allow numbers above 1000 as we don't have change.\n"
   valid =  False 
@@ -20,6 +22,24 @@ def budget_checker (question, low, high):
         print(error)
     except ValueError:
       print(error)
+
+def budget_changer (question, low, high):
+  error = "Please enter a whole number between 1 and 1000; we do not allow numbers above 1000 as we don't have change.\n"
+  valid =  False 
+  while not valid:
+    try:
+      response = float(input(question))
+
+      if 0 < response <= 1000:
+        return response
+      else:
+
+
+        print(error)
+    except ValueError:
+      print(error)
+
+      
 
 budget = budget_checker ("How much money are you wanting to spend? ", 0,1000)
 print()
@@ -92,6 +112,7 @@ def food(question):
 
     if response == "Sea Salt Crackers" or response == "a":
       response = "Sea Salt Crackers"
+      global price
       price = 2
       print("Sea Salt Crackers will come to a total of ${}.".format(price))
       return response
@@ -126,6 +147,11 @@ def food(question):
       print("Original Rice Crackers will come to a total of ${}.".format(price))
       return response
 
+    else:
+      print()
+      print("Please select an item that is on the menu")
+      print()
+
 want_order = yes_no("Would you like to order now? ").lower()
 if want_order == "no" or want_order == "n":
   repli()
@@ -145,29 +171,50 @@ if want_order == "yes" or want_order == "y":
 
 would_like = food ("What can I get you today? ").lower()
 
-if would_like == "Sea Salt Crackers" or would_like == "a":
-  print("That will come to a total of $2.00.")
-
-if would_like == "Griffins Snax" or would_like == "b":
-  print("That will come to a total of $2.50.")
-
-if would_like == "Pizza Shapes" or would_like == "c":
-  price = 3.30
-  print("That will come to a total of $3.30.")
-
-if would_like == "Arnotts Cheds" or would_like == "d":
-  price = 3.99
-  print("That will come to a total of $3.99.")
-
-if would_like == "Rosemary Wheat" or would_like == "e":
-  print("That will come to a total of $2.00.")
-
-if would_like == "Original Rice Crackers" or would_like == "f":
-  price = 1.65
-  print("That will come to a total of $1.65.")
 
 if budget < price: 
   print("You've picked an item that's more than your budget")
+  
+
+
+change = budget - price
+price 
+if price > budget:
+  print("The item you are buying exceeds your budget ")
+  time.sleep(5)
+  print()
+  print("You will need to increase your budget to ${} to purchase the item".format(price))
+  time.sleep(5)
+  print()
+  
+  while True:
+    exit = ("| type a if want to change your budget or type b if you want to exit the program : ").lower()
+    print()
+
+    if exit == "a":
+      while True:
+        new_budget = budget_changer("Please enter your new budget : ", price, 1000)
+  
+        if new_budget >= price:
+          print("A {} will cost ${}".format(item, price))
+          change = new_budget - price
+          rounded_change = round(change, 2)
+          print("Your change is ${}".format(rounded_change))
+          print("Thanks for visting us")
+          exit()
+
+        else:
+          print()
+          print("please enter a whole number that is greater than {} but less than 1000".format(price))
+      
+    
+    elif exit == "b":
+      print("Thanks for stopping by")
+      exit()
+      
+
+         
+
   
 
 
