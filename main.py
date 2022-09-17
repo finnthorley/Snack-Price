@@ -7,6 +7,44 @@ price = 0
 
 item = ""
 
+def change_leave (question):
+  valid = False
+  while not valid:
+    response = input (question) .lower()
+
+    if response == "s":
+      response = "s"
+      return response
+
+    elif response == "c":
+      response = "c"
+      return response
+    
+    if response == "e":
+      response = "e"
+      return response
+      
+    else:
+      print ("Please type S, C or E")
+
+def budget_changer (question, low, high):
+  error = "please enter a whole number that is greater than {} but less than 1000".format(price)
+  valid =  False 
+  while not valid:
+    try:
+      response = float(input(question))
+
+      if price <= response <= 1000:
+        return response
+      else:
+
+
+        print(error)
+    except ValueError:
+      print(error)
+
+
+
 def budget_checker (question, low, high):
   error = "Please enter a whole number between 1 and 1000; we do not allow numbers above 1000 as we don't have change.\n"
   valid =  False 
@@ -22,31 +60,7 @@ def budget_checker (question, low, high):
         print(error)
     except ValueError:
       print(error)
-
-def budget_changer (question, low, high):
-  error = "Please enter a whole number between 1 and 1000; we do not allow numbers above 1000 as we don't have change.\n"
-  valid =  False 
-  while not valid:
-    try:
-      response = float(input(question))
-
-      if 0 < response <= 1000:
-        return response
-      else:
-
-
-        print(error)
-    except ValueError:
-      print(error)
-
-      
-
-budget = budget_checker ("How much money are you wanting to spend? ", 0,1000)
-print()
-print("You will be spending ${}".format(budget))
-print()
-
-
+ 
 def reply():
   print()
   print("Thanks for stopping by!")
@@ -155,45 +169,63 @@ def food(question):
 want_order = yes_no("Would you like to order now? ").lower()
 if want_order == "no" or want_order == "n":
   repli()
-  time.sleep(10)
+  time.sleep(5)
   want_order = yes_no("Would you like to order now? ")
 if want_order == "no" or want_order == "n":
     reply()
-    time.sleep(10)
-    want_order = yes_no("Would you like to order now? ")
-    
-  
 
+    time.sleep(5)
+    want_order = yes_no("Would you like to order now? ")
 if want_order == "yes" or want_order == "y":
   print()
- 
-
-
-would_like = food ("What can I get you today? ").lower()
-
-
-if budget < price: 
-  print("You've picked an item that's more than your budget")
   
+  would_like = food ("What can I get you today? ")
+  print()
 
+if would_like == "Sea Salt Crackers" or would_like == "A":
+  print("That will come to a total of $2.00.")
+
+if would_like == "Griffins Snax" or would_like == "B":
+  print("That will come to a total of $2.50.")
+
+if would_like == "Pizza Shapes" or would_like == "C":
+  print("That will come to a total of $3.30.")
+
+if would_like == "Arnotts Cheds" or would_like == "D":
+  print("That will come to a total of $3.99.")
+
+if would_like == "Rosemary Wheat" or would_like == "E":
+  print("That will come to a total of $2.00.")
+
+if would_like == "Original Rice Crackers" or would_like == "F":
+  print("That will come to a total of $1.65.")
+
+  
+  print()
+budget = budget_checker ("How much money are you wanting to spend : ", 1,1000)
+print()
+print("You will be spending ${}".format(budget))
+print()
 
 change = budget - price
-price 
+
 if price > budget:
-  print("The item you are buying exceeds your budget ")
-  time.sleep(5)
+  print("The item you wish to buy is too expensive ")
   print()
   print("You will need to increase your budget to ${} to purchase the item".format(price))
-  time.sleep(5)
   print()
-  
   while True:
-    exit = ("| type a if want to change your budget or type b if you want to exit the program : ").lower()
+    leave = change_leave("Type 'C' if want to change your budget, Type 'E' if you want to leave or type 'S' if you would like me to suggest a item that you can buy with the money you have. ").lower()
     print()
 
-    if exit == "a":
+    if leave == "c":
       while True:
-        new_budget = budget_changer("Please enter your new budget : ", price, 1000)
+        new_budget = budget_changer("How much money are you wanting to spend : ", price, 1000)
+
+
+
+
+        
   
         if new_budget >= price:
           print("A {} will cost ${}".format(item, price))
@@ -203,15 +235,26 @@ if price > budget:
           print("Thanks for visting us")
           exit()
 
+          
+
         else:
           print()
-          print("please enter a whole number that is greater than {} but less than 1000".format(price))
-      
-    
-    elif exit == "b":
-      print("Thanks for stopping by")
+          print("please enter a whole number that is greater than ${} but less than 1000".format(price))
+
+
+    #ask user if the wish to leave
+    if leave == "e":
+      print("Thank you for using the Price Comparrison Tool")
       exit()
-      
+
+    if leave == "s":
+      food_budget = input("These are the items you can purchase : ")
+        
+        
+        
+print("Your change is ${}".format(change))
+print("Thank You For Using The Price Comparison Tool")
+
 
          
 
